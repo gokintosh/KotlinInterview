@@ -1,4 +1,9 @@
 package algoanddatastructures.LinkedLists
 
-class Node {
+
+
+
+data class Node<T :Any>(var value: T,var next: Node<T>?=null) {
+
+
 }
