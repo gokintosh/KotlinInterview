@@ -1,0 +1,71 @@
+creating a linked list requires three steps
+
+create a node class to represent an individual node of generic type.
+code :
+*********************************************************************************
+data class Node<T: Any>(var value:T,var next:Node<T>?=null){
+
+    we override the toString() function to
+    call a chained toString() function calls
+    by making using the condition if(next!=null)
+
+}
+
+*********************************************************************************
+
+as we created the Node class for storing the individual nodes the next step is
+to create a LinkedList and its implementation functions(push,append,insert)
+
+in a linkedlist there are two main nodes -the head and the tail
+
+class LinkedList<T:Any>{
+    private var head:Node<T>?=null
+    private var tail:Node<T>?=null
+    private var size=0
+
+    fun isEmpty():Boolean=size==0
+
+    then we override the toString() method
+
+    the push method is to insert value at the start or to attain a head first insertion
+
+    fun push(value:T){
+        we create a head node with the given value and the next to the previous head
+        head=Node(value=value,next=head)
+        if(tail==null){
+        tail==head
+        }
+        size++
+    }
+
+
+    fun append(value :T){
+        we check if the list is empty
+        if(isEmpty()){
+            push(value) !!which create a new node and sets the head and tail to itself
+            return !!we exit out of the if condition
+        }
+
+        val newNode=Node(value=value)
+        tail!!.next=newNode
+        tail=newNode
+
+        size++
+    }
+
+    fun insert(
+
+
+
+    ********************************************************************************
+}
+
+in the main function we implement the linkedlist
+fun main(){
+    val list=LinkedList<Int>()
+
+    list.push(3)
+    list.push(4) here the head points to 3
+    list.push(5) here the head points to 4
+}
+
